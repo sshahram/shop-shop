@@ -5,20 +5,44 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import spinner from '../assets/spinner.gif';
 
+// import two global state needs, our action and context Hook
+import { useStoreContext } from '../utils/GlobalState';
+import { UPDATE_PRODUCTS } from '../utils/actions';
+
 function Detail() {
+  // const { id } = useParams();
+
+  // const [currentProduct, setCurrentProduct] = useState({});
+
+  // const { loading, data } = useQuery(QUERY_PRODUCTS);
+
+  // const products = data?.products || [];
+
+  // useEffect(() => {
+  //   if (products.length) {
+  //     setCurrentProduct(products.find((product) => product._id === id));
+  //   }
+  // }, [products, id]);
+
+  const [state, dispatch] = useStoreContext();
   const { id } = useParams();
-
-  const [currentProduct, setCurrentProduct] = useState({});
-
+  
+  const [currentProduct, setCurrentProduct] = useState({})
+  
   const { loading, data } = useQuery(QUERY_PRODUCTS);
-
-  const products = data?.products || [];
-
+  
+  const { products } = state;
+  
   useEffect(() => {
     if (products.length) {
-      setCurrentProduct(products.find((product) => product._id === id));
+      setCurrentProduct(products.find(product => product._id === id));
+    } else if (data) {
+      dispatch({
+        type: UPDATE_PRODUCTS,
+        products: data.products
+      });
     }
-  }, [products, id]);
+  }, [products, data, dispatch, id]);
 
   return (
     <>
