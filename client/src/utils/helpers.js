@@ -30,11 +30,11 @@ export function idbPromise(storeName, method, object) {
     // on database open success
     request.onsuccess = function(e) {
       // save a refrence of the database to the `db` variable
-      db = request.redult;
+      db = request.result;
       // open a transaction do whatever we pass into `storeName` (must match one of the object store names)
       tx = db.transaction(storeName, 'readwrite');
       // save a referene to that object store
-      store = tx.ObjectStore(storeName)
+      store = tx.objectStore(storeName)
 
       // if there is any errors, let us know
       db.onerror = function(e) {
