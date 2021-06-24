@@ -69,7 +69,7 @@ const Cart = () => {
                 </div>
             ) : (
                 <h3>
-                    <span rol="img" aria-label="shocked">
+                    <span role="img" aria-label="shocked">
                         😱
                     </span>
                     You haven't added anything to your cart yet!
