@@ -13,8 +13,10 @@ import { QUERY_CHECKOUT } from "../../utils/queries";
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from "@apollo/client";
 
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+require('dotenv').config();
+const stripePromise = loadStripe(process.env.REACT_APP_CLIENT_KEY);
 
+// console.log(process.env);
 const Cart = () => {
     const [state, dispatch] = useStoreContext();
     // we cannot use `useQuery` here as this Hook is meant to run when a component is first rendered
