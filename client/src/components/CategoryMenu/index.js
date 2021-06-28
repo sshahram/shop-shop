@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_CATEGORIES } from '../../utils/queries';
-import { useStoreContext } from '../../utils/GlobalState';
+import { useSelector, useDispatch } from 'react-redux';
 import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY } from '../../utils/actions';
 
 import { idbPromise } from '../../utils/helpers';
@@ -10,9 +10,9 @@ function CategoryMenu() {
   // const { data: categoryData } = useQuery(QUERY_CATEGORIES);
   // const categories = categoryData?.categories || [];
 
-  // use useStoreContext() Hook to retrieve the current state from global state object
-  // and the dispatch() method to update state
-  const [state, dispatch] = useStoreContext();
+  //use Redux for state and dispatch
+  const state = useSelector(state => state);
+  const dispatch = useDispatch();
   const { categories } = state;
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
