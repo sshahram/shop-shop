@@ -3,8 +3,9 @@ import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
 import './style.css';
 
-// import the global store and toggle action
-import { useStoreContext } from '../../utils/GlobalState';
+import { useSelector, useDispatch } from 'react-redux';
+
+// import toggle action
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import { idbPromise } from "../../utils/helpers";
 
@@ -18,7 +19,8 @@ const stripePromise = loadStripe(process.env.REACT_APP_CLIENT_KEY);
 
 // console.log(process.env);
 const Cart = () => {
-    const [state, dispatch] = useStoreContext();
+    const state = useSelector(state => state);
+    const dispatch = useDispatch();
     // we cannot use `useQuery` here as this Hook is meant to run when a component is first rendered
     // here we want it to be rendered based on a user interaction like a button click
     // the data variable will contain the checkout session, but only after the query is called with the getCheckout() function
