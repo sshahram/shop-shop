@@ -29,23 +29,29 @@ In this project, I have worked on an existing e-commerce application called "sho
 
 ## Tasks List
 
-* Use the Redux to implement a Redux store.
+- [x] Use the Redux to implement a Redux store.
 
-* Write Redux actions and reducers with the necessary tests in place.
+- [x] Write Redux actions and reducers with the necessary tests in place.
 
-* Use global state across multiple React components.
+- [x] Use global state across multiple React components.
 
-* Used IndexedDB within a React component.
+- [x] Use IndexedDB within a React component.
 
-* Cached server-side data using IndexedDB.
+- [x] Cach server-side data using IndexedDB.
+
+- [x] Generate product, price, and checkout session IDs by using the Stripe API.
+
+- [x] Capture a completed order by saving IndexedDB data in MongoDB database.
+
+- [x] Use the useLazyQuery Hook to delay executing a GraphQL query.
 
 ## Acceptance Criteria
 
-- [x] When I review the app’s store, then I find that the app uses a Redux store to manage global state.
-- [x] When I review the way the React front end accesses the store, then I find that the app uses a Redux provider.
-- [x] When I review the way the app determines changes to its global state, then I find that the app passes reducers to a Redux store.
-- [x] When I review the way the app extracts state data from the store, then I find that the app uses Redux.
-- [x] When I review the way the app dispatches actions, then I find that the app uses Redux.
+* When I review the app’s store, then I find that the app uses a Redux store to manage global state.
+* When I review the way the React front end accesses the store, then I find that the app uses a Redux provider.
+* When I review the way the app determines changes to its global state, then I find that the app passes reducers to a Redux store.
+* When I review the way the app extracts state data from the store, then I find that the app uses Redux.
+* When I review the way the app dispatches actions, then I find that the app uses Redux.
 
 ## Screenshots
 
