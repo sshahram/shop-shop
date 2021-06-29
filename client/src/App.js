@@ -15,7 +15,7 @@ import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
-import { store } from './utils/GlobalState';
+import  store  from './utils/GlobalState';
 import OrderHistory from './pages/OrderHistory';
 import Success from './pages/Success';
 
