@@ -24,6 +24,8 @@ In this project, I have worked on an existing e-commerce application called "sho
 * JSON Web Token (JWT)
 * Apollo Server and Provider
 * Redux
+* Node
+* Express
 
 ## Tasks List
 
